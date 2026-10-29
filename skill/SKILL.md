@@ -1,6 +1,6 @@
 ---
 name: statement-parser
-description: Turns bank and credit card statement PDFs into Xero bank statement CSVs that reconcile, and manages the firm's statement Parsers. Use when a bookkeeper attaches statement PDFs and wants the transactions for Xero, as CSV, or "parsed"; and when they ask to set up the statement parser, build a Parser for a bank, or "promote our parsers".
+description: Turns bank and credit card statement PDFs into Xero bank statement CSVs that reconcile, and manages the firm's statement Parsers. Use whenever bank or credit card statement PDFs are attached, and when the bookkeeper asks to set up the statement parser, build a Parser for a bank, or "promote our parsers". Load this skill before doing anything with an attached statement: never open, read or extract a statement PDF yourself, not even to see what it is, since statements stay unread.
 ---
 
 # Statement Parser
