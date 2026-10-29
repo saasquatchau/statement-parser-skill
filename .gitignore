@@ -1,0 +1,29 @@
+# OS files
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+
+# Editors
+.idea/
+.vscode/
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Secrets
+.env
+
+# Real statements and other client data: never committed
+private/
+
+# Build outputs
+probe/*.zip
+
+# Packaged skill
+dist/

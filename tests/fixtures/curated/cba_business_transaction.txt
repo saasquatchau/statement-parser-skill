@@ -1,0 +1,15 @@
+Statement 1 Page 1 of 1
+Business Transaction Account
+Name PAT SAMPLE PTY LTD
+AccountNumber 06 0000 0000 0000
+Period 1Sep2026 - 30Sep2026
+Enquiries 13 1998 commbank.com.au
+Date Transaction Debit Credit Balance
+01Sep 2026 OPENING BALANCE 1,000.00 CR
+03Sep Transfer to other Bank NetBank
+Sample Savings 250.00 750.00 CR
+05Sep Direct Credit 000000 SAMPLE CLIENT
+INV 12 ValueDate 04/09/2026 1,500.00 2,250.00 CR
+12Sep Card xx0000 SAMPLE CAFE SYDNEY 22.81 2,227.19 CR
+18Sep Account Fee 10.00 2,217.19 CR
+30Sep 2026 CLOSING BALANCE 2,217.19 CR

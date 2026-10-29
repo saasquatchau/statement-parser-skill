@@ -1,0 +1,11 @@
+PROBE BANK
+Everyday Account Statement
+Statement period 01/03/2026 to 31/03/2026
+Account number 062-000 1234 5678
+Opening balance 1,000.00
+03/03/2026 SALARY ACME PTY LTD 2,500.00 CR
+Closing balance 3,500.00
+Account number 062-000 8765 4321
+Opening balance 200.00
+04/03/2026 INTEREST 1.20 CR
+Closing balance 201.20

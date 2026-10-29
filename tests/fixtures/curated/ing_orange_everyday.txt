@@ -1,0 +1,20 @@
+Orange Everyday
+PAT SAMPLE Orange Everyday number: 000000000
+1 SAMPLE STREET
+Statement from: 01/09/2026 to 30/09/2026
+SAMPLEVILLE VIC 0000
+BSB number: 000-000
+Account name: PAT SAMPLE
+Opening balance Total money in Total money out Closing balance
+$1,000.00 $1,500.00 $272.81 $2,227.19
+Transactions
+Date Details Money out $ Money in $ Balance $
+03/09/2026 Internet Transfer -250.00 750.00
+To Sample Savings
+05/09/2026 Salary Deposit 1,500.00 2,250.00
+Sample Employer Pty Ltd
+12/09/2026 Visa Purchase -22.81 2,227.19
+Sample Cafe Sampleville AUS
+Card 000000xxxxxx0000
+Page 1 of 1
+Total $-272.81 $1,500.00

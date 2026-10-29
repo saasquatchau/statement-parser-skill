@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Statement Parser Library</title>
+<style>
+:root{--bg:#f6f7f9;--paper:#fff;--ink:#1d232b;--muted:#5d6876;--line:#d9dee5;--accent:#2f6fb3;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161b;--paper:#1a2027;--ink:#e3e8ee;--muted:#9aa6b4;--line:#2c343e;--accent:#6ea8e8;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12161b;--paper:#1a2027;--ink:#e3e8ee;--muted:#9aa6b4;--line:#2c343e;--accent:#6ea8e8;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:24px 16px 48px;display:flex;flex-direction:column;gap:16px}
+h1{margin:0;font-size:24px}
+p{margin:0;color:var(--muted);max-width:65ch}
+.wrap{overflow-x:auto;background:var(--paper);border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+.tag{color:var(--accent);font-weight:600}
+.empty{padding:20px;color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <h1>Statement Parser Library</h1>
+  <p>Firm Parsers built by this firm's bookkeepers. The statement-parser skill reads and writes this list; nothing here contains client details. Parsers marked promoted are bundled into the Firm Skill and cost no tokens to use.</p>
+  <p id="status">Loading the library…</p>
+  <div class="wrap">
+    <table>
+      <thead><tr><th>Statement Format</th><th>Issuer</th><th>Account type</th><th>Built</th><th>Promoted</th></tr></thead>
+      <tbody id="rows"><tr><td colspan="5" class="empty">No Firm Parsers yet. They appear here after the first Build.</td></tr></tbody>
+    </table>
+  </div>
+</main>
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+const TYPES = {deposit: "Deposit", credit_card: "Credit card"};
+(async () => {
+  const status = document.querySelector("#status");
+  const db = await claude.use("db");
+  if (!db) { status.textContent = "Sign in to claude.ai to see the library."; return; }
+  db.collection("parsers").limit(1000).onSnapshot(snap => {
+    const parsers = snap.docs.map(d => d.data()).sort((a, b) => String(a.statement_format).localeCompare(b.statement_format));
+    status.textContent = `${parsers.length} Firm Parser${parsers.length === 1 ? "" : "s"}`;
+    if (!parsers.length) return;
+    document.querySelector("#rows").innerHTML = parsers.map(p => `<tr>
+      <td>${esc(p.statement_format)}</td><td>${esc(p.issuer)}</td><td>${esc(TYPES[p.account_type] || p.account_type)}</td>
+      <td>${esc(p.built)}</td><td>${p.promoted_in ? `<span class="tag">${esc(p.promoted_in)}</span>` : "No"}</td></tr>`).join("");
+  }, () => { status.textContent = "Couldn't load the library. Reload the page to try again."; });
+})();
+</script>
+</body>
+</html>

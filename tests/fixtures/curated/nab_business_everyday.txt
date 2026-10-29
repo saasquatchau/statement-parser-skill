@@ -1,0 +1,24 @@
+NAB Business Everyday Account
+/0001
+PAT SAMPLE PTY LTD
+1 SAMPLE STREET
+SAMPLEVILLE WA 0000
+
+Outlet Details
+BSB number 000-000 Account number 00-000-0000
+Statement starts 1 June 2025
+Statement ends 30 June 2025
+Opening balance $1,000.00 Cr
+Closing balance $2,217.19 Cr
+Business Servicing Team 13 10 12
+Transaction Details
+Date Particulars Debits Credits Balance
+1 Jun 2025 Brought forward 1,000.00 Cr
+4 Jun 2025 Internet Transfer Sample Savings ............Debits:250.00 750.00 Cr
+5 Jun 2025 0000000 Sample Client
+000000 ..........................Credits:1,500.00
+Internet Bpay Sample Telco
+000000 ....................Debits:22.81 2,227.19 Cr
+6 Jun 2025 Account Fee ......................Debits:10.00 2,217.19 Cr
+Carried forward 2,217.19 Cr
+Summary of Government Charges

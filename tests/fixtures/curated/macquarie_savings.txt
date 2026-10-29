@@ -1,0 +1,13 @@
+Macquarie Savings Account Statement
+PAT SAMPLE
+1 SAMPLE STREET
+SAMPLEVILLE NSW 0000
+From 1 September 2026 to 30 September 2026
+BSB Account No. Account Name
+000000 000000000 PAT SAMPLE Macquarie Bank Limited
+Date Transaction Description Debits Credits Balance
+01 Sep Opening balance 1,000.00CR
+03 Sep Transfer to Sample Everyday 250.00 750.00CR
+05 Sep Deposit from Sample Employer 1,500.00 2,250.00CR
+30 Sep Interest paid 2.81 2,252.81CR
+30 Sep Closing balance 2,252.81CR

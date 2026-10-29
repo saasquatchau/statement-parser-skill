@@ -1,0 +1,6 @@
+[
+  {"id": "probe_bank_deposit_2027", "statement_format": "Probe Bank deposit 2027 layout",
+   "signature": ["PROBE BANK", "Everyday Account Statement"]},
+  {"id": "mystery_credit_union", "statement_format": "Mystery Credit Union savings",
+   "signature": ["MYSTERY CREDIT UNION", "Savings Statement"]}
+]

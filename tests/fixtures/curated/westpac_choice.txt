@@ -1,0 +1,19 @@
+Electronic Statement
+Statement Period
+1 September 2026 - 30 September 2026
+Name
+PAT SAMPLE
+1 SAMPLE STREET,
+SAMPLEVILLE VIC 0000
+BSB Account Number
+000-000 000000
+Opening Balance + $1,000.00
+Closing Balance + $2,227.19
+DATE TRANSACTION DESCRIPTION DEBIT CREDIT BALANCE
+01/09/26 STATEMENT OPENING BALANCE 1,000.00
+03/09/26 Withdrawal Online 0000000 Tfr Sample Savings 250.00 750.00
+05/09/26 Deposit Online 0000000
+Sample Client Inv 12 1,500.00 2,250.00
+12/09/26 Eftpos Debit 12/09/26 Sample Cafe 22.81 2,227.19
+30/09/26 CLOSING BALANCE 2,227.19
+Westpac Banking Corporation ABN 33 007 457 141 AFSL and Australian credit licence 233714.

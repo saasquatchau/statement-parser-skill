@@ -1,0 +1,10 @@
+PROBE CARD SERVICES
+Platinum Card Statement
+Statement period 01/03/2026 to 31/03/2026
+Account number 4564 0000 0000 9012
+Opening balance 1,200.00
+02/03/2026 PAYMENT THANK YOU 1,200.00 CR
+10/03/2026 QANTAS AIRWAYS 450.00 DR
+22/03/2026 COLES 0456 95.50 DR
+Available credit 9,454.50
+Closing balance 545.50

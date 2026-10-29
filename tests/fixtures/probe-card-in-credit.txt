@@ -1,0 +1,9 @@
+PROBE CARD SERVICES
+Platinum Card Statement
+Statement period 01/04/2026 to 30/04/2026
+Account number 4564 0000 0000 9012
+Opening balance 100.00 CR
+05/04/2026 PAYMENT THANK YOU 300.00 CR
+18/04/2026 BUNNINGS 50.00 DR
+Available credit 10,350.00
+Closing balance 350.00 CR

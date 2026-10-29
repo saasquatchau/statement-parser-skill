@@ -1,0 +1,12 @@
+PROBE SPLIT CARD
+Statement period 01/07/2026 to 31/07/2026
+Account number 4622 1111 2222 3456
+Opening balance 500.00
+Purchases and debits
+05/07/2026 WOOLWORTHS 50.00
+05/07/2026 BP FUEL 70.00
+20/07/2026 JB HIFI 200.00
+Payments and credits
+05/07/2026 REFUND WOOLWORTHS 10.00
+12/07/2026 PAYMENT 500.00
+Closing balance 310.00

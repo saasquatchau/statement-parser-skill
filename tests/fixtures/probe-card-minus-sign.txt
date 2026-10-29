@@ -1,0 +1,8 @@
+PROBE CARD SERVICES
+Platinum Card Statement
+Statement period 01/05/2026 to 31/05/2026
+Account number 4564 0000 0000 9012
+Opening balance -350.00
+07/05/2026 OFFICEWORKS 400.00 DR
+Available credit 9,950.00
+Closing balance 50.00
