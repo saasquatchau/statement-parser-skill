@@ -18,7 +18,7 @@ def installed_skill(tmp_path):
     """The demo skill unzipped and made read-only, as skills are in Claude's sandbox."""
     subprocess.run([sys.executable, "scripts/build_skill.py", "--out", str(tmp_path / "dist"), "--demo"],
                    cwd=ROOT, check=True, capture_output=True)
-    with zipfile.ZipFile(tmp_path / "dist" / "statement-parser.zip") as z:
+    with zipfile.ZipFile(tmp_path / "dist" / "statement-parser.skill") as z:
         z.extractall(tmp_path / "installed")
     skill = tmp_path / "installed" / "statement-parser"
     for path in [skill, *skill.rglob("*")]:
@@ -38,9 +38,9 @@ def test_firm_skill_is_the_installed_skill_plus_the_firms_library_address(tmp_pa
 
     assert result.returncode == 0, result.stdout + result.stderr
     assert result.stdout.splitlines() == [
-        f"SKILL statement-parser.zip: Firm Skill v1 for Example Bookkeeping, {DEMO_BUNDLED} Bundled Parsers",
+        f"SKILL statement-parser.skill: Firm Skill v1 for Example Bookkeeping, {DEMO_BUNDLED} Bundled Parsers",
     ]
-    with zipfile.ZipFile(tmp_path / "outputs" / "statement-parser.zip") as z:
+    with zipfile.ZipFile(tmp_path / "outputs" / "statement-parser.skill") as z:
         z.extractall(tmp_path / "firm")
     firm_skill = tmp_path / "firm" / "statement-parser"
     assert json.loads((firm_skill / "firm.json").read_text()) == {
@@ -68,7 +68,7 @@ def firm_skill(tmp_path):
     """The demo skill rebuilt as a Firm Skill and unzipped, as installed for a firm."""
     skill = installed_skill(tmp_path)
     harness(skill, "firm-skill", "--library", LIBRARY, "--firm", "Example Bookkeeping", "--out", tmp_path / "outputs")
-    with zipfile.ZipFile(tmp_path / "outputs" / "statement-parser.zip") as z:
+    with zipfile.ZipFile(tmp_path / "outputs" / "statement-parser.skill") as z:
         z.extractall(tmp_path / "firm")
     return tmp_path / "firm" / "statement-parser"
 
@@ -113,10 +113,10 @@ def test_promotion_bundles_firm_parsers_into_the_next_firm_skill_version(tmp_pat
 
     assert result.returncode == 0, result.stdout + result.stderr
     assert result.stdout.splitlines() == [
-        f"SKILL statement-parser.zip: Firm Skill v2 for Example Bookkeeping, {DEMO_BUNDLED + 2} Bundled Parsers",
+        f"SKILL statement-parser.skill: Firm Skill v2 for Example Bookkeeping, {DEMO_BUNDLED + 2} Bundled Parsers",
         "PROMOTED probe_bank_deposit_2027, probe_card: set promoted_in to \"v2\" on their library rows",
     ]
-    promoted = unzip(tmp_path / "promoted-zip" / "statement-parser.zip", tmp_path / "v2")
+    promoted = unzip(tmp_path / "promoted-zip" / "statement-parser.skill", tmp_path / "v2")
     assert sorted(p.name for p in (promoted / "parsers" / "promoted").glob("*.py")) == [
         "probe_bank_deposit_2027.py", "probe_card.py",
     ]
@@ -145,7 +145,7 @@ def promoted_skill(tmp_path):
     fetched.mkdir()
     shutil.copy(ROOT / "tests" / "parsers_firm" / "probe_bank_deposit_2027.py", fetched)
     promote(skill, fetched, tmp_path / "promoted-zip")
-    return unzip(tmp_path / "promoted-zip" / "statement-parser.zip", tmp_path / "v2")
+    return unzip(tmp_path / "promoted-zip" / "statement-parser.skill", tmp_path / "v2")
 
 
 def test_promoted_parser_runs_without_the_library(tmp_path):

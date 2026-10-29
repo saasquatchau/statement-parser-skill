@@ -1,5 +1,5 @@
-"""Packages the statement-parser skill as an uploadable zip: SKILL.md, the library page, the harness and the
-Curated Parsers.
+"""Packages the statement-parser skill as an uploadable .skill file (a zip): SKILL.md, the library page, the
+harness and the Curated Parsers.
 
     python scripts/build_skill.py [--out dist] [--demo]
 
@@ -34,7 +34,7 @@ def build(out, demo):
         shutil.copy(ROOT / "tests" / "parsers" / "probe_bank_deposit.py", curated)
         pdf_from_fixture(ROOT / "tests" / "fixtures" / "probe-deposit-march.txt", out)
         (out / "probe-deposit-march.pdf").rename(out / "demo-statement.pdf")
-    archive = out / f"{NAME}.zip"
+    archive = out / f"{NAME}.skill"  # a zip; Claude accepts it as a skill upload
     with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as z:
         for path in sorted(staging.rglob("*")):
             z.write(path, path.relative_to(out))

@@ -93,7 +93,7 @@ Promotion makes the firm's Parsers free to use: they're bundled into the Firm Sk
 
    - `REJECT` a Parser contains a long number that could be an account number. Nothing was promoted; tell the bookkeeper which Parser, and that it needs rebuilding before it can be promoted.
    - `SKILL` then `PROMOTED`. For each id on the `PROMOTED` line, update its row in `parsers` to set `promoted_in` to the version printed (e.g. `"v2"`).
-3. Share `statement-parser.zip` as a download, with steps: download it; in Customize › Skills remove the current "statement-parser" and upload the zip; start a new chat. The Parsers stay in the library, so nothing is lost if the skill is ever reinstalled; promoting again bundles them back.
+3. Share `statement-parser.skill` as a download, with steps: download it; in Customize › Skills remove the current "statement-parser" and upload the file; start a new chat. The Parsers stay in the library, so nothing is lost if the skill is ever reinstalled; promoting again bundles them back.
 
 ## Setup (first use by a firm)
 
@@ -107,10 +107,10 @@ Run Setup only when the bookkeeper asks for it, or accepts it when offered. It g
    cd <this skill's folder> && PYTHONDONTWRITEBYTECODE=1 python3 -m harness firm-skill --library "<library link>" --firm "<firm name>" --out /mnt/user-data/outputs
    ```
 
-   It prints `SKILL statement-parser.zip: …` when done, or `FAIL` if the link isn't a claude.ai artifact link.
-4. Share `statement-parser.zip` as a download and give these steps, in plain words:
-   1. Download the zip.
-   2. In Claude, open Customize › Skills, remove the current "statement-parser" skill, then upload the zip with "+" › Upload a skill.
+   It prints `SKILL statement-parser.skill: …` when done, or `FAIL` if the link isn't a claude.ai artifact link.
+4. Share `statement-parser.skill` as a download and give these steps, in plain words:
+   1. Download `statement-parser.skill`.
+   2. In Claude, open Customize › Skills, remove the current "statement-parser" skill, then upload the file with "+" › Upload a skill.
    3. Open the library link, choose Share, and invite each bookkeeper in the firm with permission to edit (Contributor), so their new Parsers can be saved there. Only people in the same Claude organisation can save to it.
    4. Start a new chat to use the Firm Skill.
 

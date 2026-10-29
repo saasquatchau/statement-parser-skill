@@ -16,13 +16,13 @@ The vocabulary (Statement Format, Reconciliation, Firm Parser and so on) is defi
 
 ## Install
 
-Build the skill zip:
+Download `statement-parser.skill` from the latest [release](https://github.com/saasquatchau/statement-parser-skill/releases/latest), or build it yourself:
 
 ```bash
 python scripts/build_skill.py
 ```
 
-Upload `dist/statement-parser.zip` in Claude under Customize › Skills. Then attach statement PDFs in a chat and ask for Xero CSVs.
+Upload `statement-parser.skill` (built into `dist/`) in Claude under Customize › Skills. Then attach statement PDFs in a chat and ask for Xero CSVs.
 
 To give a firm its own library and Firm Skill, ask the skill to "set up the statement parser". It creates the library and hands back a Firm Skill zip to upload in place of the original.
 
@@ -39,6 +39,12 @@ python -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
 ```
 
 The OCR test for scanned statements is skipped unless the `tesseract` binary is installed.
+
+To release, push a version tag. [The release workflow](.github/workflows/release.yml) runs the tests, including OCR, and publishes `statement-parser.skill` as a GitHub release:
+
+```bash
+git tag v1.0.0 && git push origin v1.0.0
+```
 
 | Path | What's there |
 |---|---|

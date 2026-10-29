@@ -1,5 +1,5 @@
 """Rebuilds the installed skill into a Firm Skill: the same files plus firm.json, which carries the firm's name
-and the address of its library (see ADR-0004). Setup and Promotion both hand this zip back to the bookkeeper."""
+and the address of its library (see ADR-0004). Setup and Promotion both hand this .skill file back to the bookkeeper."""
 import json
 import re
 import zipfile
@@ -26,11 +26,11 @@ def bundled_ids(root=SKILL_ROOT):
 
 
 def write_firm_skill(out, firm, library, version, promote_dir=None):
-    """Writes the Firm Skill zip; returns (archive, number of Bundled Parsers, ids promoted now)."""
+    """Writes the Firm Skill .skill file; returns (archive, number of Bundled Parsers, ids promoted now)."""
     promoting = sorted(Path(promote_dir).glob("*.py")) if promote_dir else []
     replaced = {f"parsers/promoted/{p.name}" for p in promoting}
     out.mkdir(parents=True, exist_ok=True)
-    archive = out / f"{SKILL_NAME}.zip"
+    archive = out / f"{SKILL_NAME}.skill"  # a zip; Claude accepts it as a skill upload
     bundled = 0
     with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as z:
         for path in sorted(SKILL_ROOT.rglob("*")):
